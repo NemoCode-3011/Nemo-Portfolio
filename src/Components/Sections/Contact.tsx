@@ -36,7 +36,7 @@ const Contact = ({ onBack }: Props) => {
 
     const colors = ["#1372AA", "#17797C", "#7FD398"];
 
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 40; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -49,8 +49,11 @@ const Contact = ({ onBack }: Props) => {
     }
 
     let animationId: number;
-
-    const animate = () => {
+    let lastTime = 0;
+    const animate = (timestamp: number) => {
+      animationId = requestAnimationFrame(animate);
+      if (timestamp - lastTime < 32) return;
+      lastTime = timestamp;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const gradient = ctx.createRadialGradient(
@@ -80,7 +83,7 @@ const Contact = ({ onBack }: Props) => {
       animationId = requestAnimationFrame(animate);
     };
 
-    animate();
+    requestAnimationFrame(animate);
 
     const handleResize = () => {
       canvas.width = window.innerWidth;

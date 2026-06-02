@@ -36,7 +36,7 @@ const LoadingScreen = ({ onStart }: Props) => {
 
     const colors = ["#1372AA", "#17797C", "#7FD398", "#063848"];
 
-    for (let i = 0; i < 120; i++) {
+    for (let i = 0; i < 60; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -48,9 +48,15 @@ const LoadingScreen = ({ onStart }: Props) => {
       });
     }
 
+
     let animationId: number;
 
-    const animate = () => {
+    let lasTime = 0;
+
+    const animate = (timestamp: number) => {
+      animationId = requestAnimationFrame(animate);
+      if (timestamp - lasTime < 32) return;
+      lasTime = timestamp;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Deep atmospheric glow — center
@@ -86,7 +92,7 @@ const LoadingScreen = ({ onStart }: Props) => {
       animationId = requestAnimationFrame(animate);
     };
 
-    animate();
+    requestAnimationFrame(animate);
 
     const handleResize = () => {
       canvas.width = window.innerWidth;

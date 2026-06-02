@@ -61,7 +61,7 @@ const About = ({ onBack }: Props) => {
 
     const colors = ["#1372AA", "#17797C", "#7FD398", "#063848"];
 
-    for (let i = 0; i < 180; i++) {
+    for (let i = 0; i < 80; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -135,8 +135,11 @@ const About = ({ onBack }: Props) => {
       ctx.globalAlpha = 1;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
-
-    const animate = () => {
+    let lastTime = 0;
+    const animate = (timestamp: number) => {
+      animationId = requestAnimationFrame(animate);
+      if (timestamp - lastTime < 32) return;
+      lastTime = timestamp;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       time += 0.008;
 
@@ -194,8 +197,7 @@ const About = ({ onBack }: Props) => {
 
       animationId = requestAnimationFrame(animate);
     };
-
-    animate();
+    requestAnimationFrame(animate);
 
     const handleResize = () => {
       canvas.width = window.innerWidth;

@@ -7,6 +7,7 @@ import Skills from "./Components/Sections/Skills";
 import Projects from "./Components/Sections/Projects";
 import Services from "./Components/Sections/Services";
 import Contact from "./Components/Sections/Contact";
+import { lazy, Suspense } from "react";
 
 type GameState = "loading" | "menu" | "about" | "skills" | "projects" | "services" | "contact";
 
@@ -24,7 +25,15 @@ const App = () => {
   const handleBack = () => setGameState("menu");
   const handleContact = () => setGameState("contact")
 
+  const About = lazy(() => import("./Components/Sections/About"));
+  const Skills = lazy(() => import("./Components/Sections/Skills"));
+  const Projects = lazy(() => import("./Components/Sections/Projects"));
+  const Services = lazy(() => import("./Components/Sections/Services"));
+  const Contact = lazy(() => import("./Components/Sections/Contact"));
+
   return (
+    <Suspense fallback={null}>
+
     <AnimatePresence mode="wait">
       {gameState === "loading" && (
         <LoadingScreen key="loading" onStart={handleStart} />
@@ -48,6 +57,9 @@ const App = () => {
         <Contact key="contact" onBack={handleBack} />
       )}
     </AnimatePresence>
+    </Suspense>
+
+
   );
 };
 
