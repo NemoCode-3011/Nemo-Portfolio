@@ -142,7 +142,7 @@ const ProjectModal = ({
         style={{ backgroundColor: "#020A0C" }}
       >
         {/* Image placeholder */}
-        <div className="w-full h-[180px] bg-[#063848]/30 border-b border-[#17797C]/20 flex items-center justify-center relative overflow-hidden">
+        <div className="w-full h-45 bg-[#063848]/30 border-b border-[#17797C]/20 flex items-center justify-center relative overflow-hidden">
           {project.image ? (
             <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
           ) : (
@@ -283,7 +283,7 @@ const MapPin = ({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-[140px] z-20"
+            className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-35 z-20"
             style={{
               backgroundColor: "#F5E6C8",
               border: "2px solid #8B6914",
@@ -293,7 +293,7 @@ const MapPin = ({
           >
             {/* Polaroid image area */}
             <div
-              className="w-full h-[80px] mb-2 flex items-center justify-center"
+              className="w-full h-20 mb-2 flex items-center justify-center"
               style={{ backgroundColor: "#E8D5A3" }}
             >
               <span
@@ -497,8 +497,8 @@ const Projects = ({ onBack }: Props) => {
         />
 
         {/* Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020A0C]/60 via-transparent to-[#020A0C]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020A0C]/40 via-transparent to-[#020A0C]/40" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#020A0C]/60 via-transparent to-[#020A0C]/40" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#020A0C]/40 via-transparent to-[#020A0C]/40" />
 
         {/* Project pins */}
         {projects.map((project) => (

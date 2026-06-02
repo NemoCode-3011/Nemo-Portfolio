@@ -204,7 +204,7 @@ const AbilityCard = ({ card, index }: { card: AbilityCard; index: number }) => {
       >
         {/* Illustration area */}
         <div
-          className="relative h-[140px] flex items-center justify-center overflow-hidden"
+          className="relative h-35 flex items-center justify-center overflow-hidden"
           style={{
             background: `radial-gradient(ellipse at center, ${card.glowColor} 0%, #020A0C 70%)`,
           }}
@@ -242,7 +242,7 @@ const AbilityCard = ({ card, index }: { card: AbilityCard; index: number }) => {
             {card.category}
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#061410] to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-8 bg-linear-to-t from-[#061410] to-transparent" />
         </div>
 
         {/* Divider */}
@@ -347,7 +347,7 @@ const MarqueeRow = ({
         {doubled.map((item, i) => (
           <div
             key={i}
-            className="flex items-center gap-3 px-6 py-3 border border-[#17797C]/20 bg-[#063848]/20 backdrop-blur-sm flex-shrink-0 hover:border-[#7FD398]/40 transition-all duration-300"
+            className="flex items-center gap-3 px-6 py-3 border border-[#17797C]/20 bg-[#063848]/20 backdrop-blur-sm shrink-0 hover:border-[#7FD398]/40 transition-all duration-300"
           >
             <span className="text-[#17797C] text-lg">{item.icon}</span>
             <span
@@ -462,12 +462,12 @@ const Skills = ({ onBack }: Props) => {
       className="fixed inset-0 bg-[#020A0C] overflow-y-auto overflow-x-hidden"
     >
       <canvas ref={canvasRef} className="fixed inset-0 w-full h-full pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#020A0C] via-transparent to-[#020A0C]/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#020A0C] via-transparent to-[#020A0C]/50 pointer-events-none" />
       
        <img
         src={gow}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
+        className="absolute inset-0 w-full h-300 object-contain opacity-30"
       />
 
       {/* Corner decorations */}

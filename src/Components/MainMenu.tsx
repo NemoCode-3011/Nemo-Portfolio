@@ -19,9 +19,9 @@ const menuItems = [
 const MainMenu = ({ onSelect }: Props) => {
   const [activeItem, setActiveItem] = useState(0);
 
-  function onRestart(): void {
-    throw new Error("Function not implemented.");
-  }
+  // function onRestart(): void {
+  //   throw new Error("Function not implemented.");
+  // }
 
   return (
     <motion.div
@@ -44,8 +44,8 @@ const MainMenu = ({ onSelect }: Props) => {
 
       {/* Lighter overlays — let the image breathe */}
       <div className="absolute inset-0 bg-[#020A0C]/35" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#020A0C]/95 via-[#020A0C]/50 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#020A0C]/80 via-transparent to-[#020A0C]/30" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#020A0C]/95 via-[#020A0C]/50 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#020A0C]/80 via-transparent to-[#020A0C]/30" />
 
       {/* Subtle teal glow — much lighter than before */}
       <div
@@ -113,7 +113,7 @@ const MainMenu = ({ onSelect }: Props) => {
                 opacity: activeItem === index ? 1 : 0.4,
               }}
               transition={{ duration: 0.3 }}
-              className="h-px flex-shrink-0"
+              className="h-px shrink-0"
             />
 
             <motion.span
@@ -144,7 +144,7 @@ const MainMenu = ({ onSelect }: Props) => {
         transition={{ duration: 1, delay: 1.5 }}
         className="absolute bottom-8 left-12 md:left-20 flex flex-col gap-1 top-[90%]"
       >
-        <div className="w-16 h-px bg-gradient-to-r from-[#17797C] to-transparent mb-2 " />
+        <div className="w-16 h-px bg-linear-to-r from-[#17797C] to-transparent mb-2 " />
         <p
           className="text-[#4D8A8A] text-xs tracking-[0.3em] uppercase"
           style={{ fontFamily: "'Cinzel', serif" }}
@@ -172,7 +172,7 @@ const MainMenu = ({ onSelect }: Props) => {
           className="w-1.5 h-1.5 rounded-full bg-[#7FD398]"
         />
         <p
-          className="text-[#4D8A8A] text-xs tracking-[0.3em] uppercase"
+          className="text-[#4D8A8A] text-xs text-center tracking-[0.3em] uppercase"
           style={{ fontFamily: "'Cinzel', serif" }}
         >
           Select to explore

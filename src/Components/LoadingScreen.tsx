@@ -115,8 +115,8 @@ const LoadingScreen = ({ onStart }: Props) => {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#020A0C] via-transparent to-[#020A0C]/60" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#020A0C]/60 via-transparent to-[#020A0C]/60" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#020A0C] via-transparent to-[#020A0C]/60" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#020A0C]/60 via-transparent to-[#020A0C]/60" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-8">
@@ -174,7 +174,7 @@ const LoadingScreen = ({ onStart }: Props) => {
           initial={{ width: 0 }}
           animate={{ width: "200px" }}
           transition={{ duration: 2, delay: 0.5 }}
-          className="h-px bg-gradient-to-r from-transparent via-[#17797C] to-transparent mt-4"
+          className="h-px bg-linear-to-r from-transparent via-[#17797C] to-transparent mt-4"
         />
       </div>
 
