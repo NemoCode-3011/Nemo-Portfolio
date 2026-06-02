@@ -4,10 +4,11 @@ import bg from "../assets/bg-img.jpg";
 
 interface Props {
   onSelect: (section: string) => void;
+  
 }
 
 const menuItems = [
-  { id: "home", label: "Continue" },
+  { id: "restart", label: "New Game" },
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
@@ -17,6 +18,10 @@ const menuItems = [
 
 const MainMenu = ({ onSelect }: Props) => {
   const [activeItem, setActiveItem] = useState(0);
+
+  function onRestart(): void {
+    throw new Error("Function not implemented.");
+  }
 
   return (
     <motion.div

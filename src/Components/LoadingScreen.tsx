@@ -143,7 +143,7 @@ const LoadingScreen = ({ onStart }: Props) => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 1, ease: "easeOut" }}
-          className="text-[#4D8A8A] text-xs md:text-sm tracking-[0.5em] uppercase"
+          className="text-[#4D8A8A] text-xs text-center md:text-sm tracking-[0.5em] uppercase"
           style={{ fontFamily: "'Cinzel', serif" }}
         >
           Frontend Developer — Builder — Dreamer

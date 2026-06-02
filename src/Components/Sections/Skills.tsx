@@ -13,6 +13,7 @@ import { PiMouseScrollFill } from "react-icons/pi";
 import { SiVite } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa";
 import { TbApi } from "react-icons/tb";
+import gow from "../../assets/Godw.jpg"
 
 
 interface Props {
@@ -22,18 +23,18 @@ interface Props {
 const row1 = [
   { name: "HTML", icon: <FaHtml5 /> },
   { name: "CSS", icon: <FaCss3Alt /> },
-  { name: "JavaScript", icon: <IoLogoJavascript/> },
-  { name: "TypeScript", icon: <SiTypescript />  },
-  { name: "React", icon: < FaReact/> },
+  { name: "JavaScript", icon: <IoLogoJavascript /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
+  { name: "React", icon: < FaReact /> },
   { name: "React Router", icon: <SiReactrouter /> },
 ];
 
 const row2 = [
-  { name: "Tailwind CSS", icon: <RiTailwindCssFill/>  },
-  { name: "Custom CSS", icon: <DiCssTricks/> },
-  { name: "Framer Motion", icon: <SiFramer/> },
-  { name: "Lenis", icon: <PiMouseScrollFill/> },
-  { name: "Vite", icon: <SiVite/> },
+  { name: "Tailwind CSS", icon: <RiTailwindCssFill /> },
+  { name: "Custom CSS", icon: <DiCssTricks /> },
+  { name: "Framer Motion", icon: <SiFramer /> },
+  { name: "Lenis", icon: <PiMouseScrollFill /> },
+  { name: "Vite", icon: <SiVite /> },
   { name: "Git", icon: <FaGitAlt /> },
   { name: "REST APIs", icon: <TbApi /> },
 ];
@@ -462,6 +463,12 @@ const Skills = ({ onBack }: Props) => {
     >
       <canvas ref={canvasRef} className="fixed inset-0 w-full h-full pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#020A0C] via-transparent to-[#020A0C]/50 pointer-events-none" />
+      
+       <img
+        src={gow}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover opacity-30"
+      />
 
       {/* Corner decorations */}
       <div className="fixed top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-[#17797C]/50 pointer-events-none" />
@@ -627,142 +634,142 @@ const Skills = ({ onBack }: Props) => {
                       }}
                     >
                       <motion.span
-                        animate={{scale: [1, 1.1, 1] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                          className="text-5xl"
-                      style={{
-                        color: "#7FD398",
-                        filter: "drop-shadow(0 0 15px #7FD398)",
-                      }}>
-                      ᚨ ᛞ
-                    </motion.span>
-                    <div
-                      className="h-px w-12"
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="text-5xl"
+                        style={{
+                          color: "#7FD398",
+                          filter: "drop-shadow(0 0 15px #7FD398)",
+                        }}>
+                        ᚨ ᛞ
+                      </motion.span>
+                      <div
+                        className="h-px w-12"
+                        style={{
+                          background:
+                            "linear-gradient(to right, transparent, #7FD398, transparent)",
+                        }}
+                      />
+                      <p
+                        className="text-xs tracking-widest uppercase text-center px-4"
+                        style={{ color: "#4D8A8A", fontFamily: "'Cinzel', serif" }}
+                      >
+                        Ability Deck
+                      </p>
+                    </div>
+
+                    {/* Shimmer */}
+                    <motion.div
+                      animate={{ x: ["-100%", "200%"] }}
+                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                      className="absolute inset-0 pointer-events-none"
                       style={{
                         background:
-                          "linear-gradient(to right, transparent, #7FD398, transparent)",
+                          "linear-gradient(105deg, transparent 40%, rgba(127,211,152,0.1) 50%, transparent 60%)",
                       }}
                     />
-                    <p
-                      className="text-xs tracking-widest uppercase text-center px-4"
-                      style={{ color: "#4D8A8A", fontFamily: "'Cinzel', serif" }}
-                    >
-                      Ability Deck
-                    </p>
-                  </div>
-
-                  {/* Shimmer */}
-                  <motion.div
-                    animate={{ x: ["-100%", "200%"] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background:
-                        "linear-gradient(105deg, transparent 40%, rgba(127,211,152,0.1) 50%, transparent 60%)",
-                    }}
-                  />
+                  </motion.div>
                 </motion.div>
-              </motion.div>
 
                 {/* Click arrow */}
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="flex flex-col items-center gap-2 cursor-pointer"
-              onClick={() => setDeckRevealed(true)}
-            >
-              <p
-                className="text-[#17797C] text-xs tracking-[0.3em] uppercase"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Click to reveal abilities
-              </p>
-              <motion.div
-                animate={{ opacity: [0.4, 1, 0.4] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="text-[#17797C] text-lg"
-              >
-                ↓
+                <motion.div
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="flex flex-col items-center gap-2 cursor-pointer"
+                  onClick={() => setDeckRevealed(true)}
+                >
+                  <p
+                    className="text-[#17797C] text-xs tracking-[0.3em] uppercase"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    Click to reveal abilities
+                  </p>
+                  <motion.div
+                    animate={{ opacity: [0.4, 1, 0.4] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="text-[#17797C] text-lg"
+                  >
+                    ↓
+                  </motion.div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            ) : (
+              /* ── SPREAD STATE ── */
+              <motion.div
+                key="spread"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="flex flex-col gap-6"
+              >
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                  {abilityCards.map((card, index) => (
+                    <motion.div
+                      key={card.name}
+                      initial={{
+                        opacity: 0,
+                        scale: 0.3,
+                        rotate: (index - abilityCards.length / 2) * 15,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        rotate: 0,
+                      }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.07,
+                        ease: [0.175, 0.885, 0.32, 1.275],
+                      }}
+                    >
+                      <AbilityCard card={card} index={index} />
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Reshuffle */}
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: abilityCards.length * 0.07 + 0.5 }}
+                  onClick={() => setDeckRevealed(false)}
+                  className="flex items-center gap-2 text-[#4D8A8A] hover:text-[#17797C] transition-colors duration-300 self-start"
+                >
+                  <span
+                    className="text-xs tracking-widest uppercase"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    ↺ Reshuffle deck
+                  </span>
+                </motion.button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
-        ) : (
-        /* ── SPREAD STATE ── */
+
+        {/* Legend */}
         <motion.div
-          key="spread"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="flex flex-col gap-6"
+          transition={{ duration: 0.8, delay: 1 }}
+          className="flex items-center gap-8 flex-wrap"
         >
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {abilityCards.map((card, index) => (
-              <motion.div
-                key={card.name}
-                initial={{
-                  opacity: 0,
-                  scale: 0.3,
-                  rotate: (index - abilityCards.length / 2) * 15,
-                }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  rotate: 0,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.07,
-                  ease: [0.175, 0.885, 0.32, 1.275],
-                }}
+          {[
+            { label: "Confident", color: "#7FD398" },
+            { label: "Familiar", color: "#F59E0B" },
+            { label: "Learning", color: "#DC2626" },
+          ].map(({ label, color }) => (
+            <div key={label} className="flex items-center gap-2">
+              <div className="w-2 h-2" style={{ backgroundColor: color }} />
+              <span
+                className="text-xs tracking-widest uppercase"
+                style={{ color: "#4D8A8A", fontFamily: "'Outfit', sans-serif" }}
               >
-                <AbilityCard card={card} index={index} />
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Reshuffle */}
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: abilityCards.length * 0.07 + 0.5 }}
-            onClick={() => setDeckRevealed(false)}
-            className="flex items-center gap-2 text-[#4D8A8A] hover:text-[#17797C] transition-colors duration-300 self-start"
-          >
-            <span
-              className="text-xs tracking-widest uppercase"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              ↺ Reshuffle deck
-            </span>
-          </motion.button>
+                {label}
+              </span>
+            </div>
+          ))}
         </motion.div>
-            )}
-      </AnimatePresence>
-    </motion.div>
-
-        {/* Legend */ }
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 0.8, delay: 1 }}
-    className="flex items-center gap-8 flex-wrap"
-  >
-    {[
-      { label: "Confident", color: "#7FD398" },
-      { label: "Familiar", color: "#F59E0B" },
-      { label: "Learning", color: "#DC2626" },
-    ].map(({ label, color }) => (
-      <div key={label} className="flex items-center gap-2">
-        <div className="w-2 h-2" style={{ backgroundColor: color }} />
-        <span
-          className="text-xs tracking-widest uppercase"
-          style={{ color: "#4D8A8A", fontFamily: "'Outfit', sans-serif" }}
-        >
-          {label}
-        </span>
-      </div>
-    ))}
-  </motion.div>
 
       </div >
     </motion.div >

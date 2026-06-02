@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import nemo from "../../assets/img-2.jpeg";
-
+import life from "../../assets/DBH.jpeg"
 interface Props {
   onBack: () => void;
 }
@@ -216,13 +216,19 @@ const About = ({ onBack }: Props) => {
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 1.15, opacity: 0 }}
       transition={{ duration: 1.2, ease: "easeInOut" }}
-      className="fixed inset-0 bg-[#020A0C] overflow-hidden"
+      className="fixed inset-0 bg-[#020A0C] overflow-y-auto"
     >
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
+      <img
+        src={life}
+        alt=""
+        className="absolute inset-0 w-full h-full object-contain opacity-30"
+      />
+
       {/* Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#020A0C] via-transparent to-[#020A0C]/50" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#020A0C]/60 via-transparent to-[#020A0C]/80" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#020A0C] via-transparent to-[#020A0C]/50" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#020A0C]/60 via-transparent to-[#020A0C]/80" />
 
       {/* Corner decorations */}
       <div className="absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-[#17797C]/50" />
@@ -253,7 +259,7 @@ const About = ({ onBack }: Props) => {
       </motion.button>
 
       {/* Main content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-8 md:px-16 h-full flex flex-col justify-center pt-24 pb-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-8 md:px-16 min-h-full flex flex-col justify-center pt-24 pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
           {/* Left — Photo + Dev Stats */}
@@ -275,7 +281,7 @@ const About = ({ onBack }: Props) => {
             </div>
 
             {/* Photo — ID card style */}
-            <div className="relative w-[200px]">
+            <div className="relative w-50">
               {/* Glow behind photo */}
               <div
                 className="absolute -inset-2 rounded-sm blur-xl opacity-20"
@@ -288,10 +294,10 @@ const About = ({ onBack }: Props) => {
                 <img
                   src={nemo}
                   alt="Nemo"
-                  className="w-full h-[240px] object-cover object-top grayscale"
+                  className="w-full h-60 object-cover object-top grayscale"
                 />
                 {/* Photo overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020A0C]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#020A0C]/80 via-transparent to-transparent" />
                 {/* ID tag */}
                 <div className="absolute bottom-0 left-0 right-0 p-3 bg-[#020A0C]/60 backdrop-blur-sm">
                   <p
@@ -321,7 +327,7 @@ const About = ({ onBack }: Props) => {
                   className="flex items-start gap-4 border-b border-[#17797C]/10 pb-3"
                 >
                   <span
-                    className="text-[#17797C] text-xs tracking-widest uppercase w-16 flex-shrink-0 pt-0.5"
+                    className="text-[#17797C] text-xs tracking-widest uppercase w-16 shrink-0 pt-0.5"
                     style={{ fontFamily: "'Cinzel', serif" }}
                   >
                     {stat.label}
@@ -398,7 +404,7 @@ const About = ({ onBack }: Props) => {
                   className="flex items-start gap-4 py-2 border-b border-[#17797C]/10"
                 >
                   <span
-                    className="text-[#17797C] text-xs tracking-widest uppercase w-24 flex-shrink-0 pt-0.5"
+                    className="text-[#17797C] text-xs tracking-widest uppercase w-24 shrink-0 pt-0.5"
                     style={{ fontFamily: "'Cinzel', serif" }}
                   >
                     {stat.label}
