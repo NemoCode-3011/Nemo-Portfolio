@@ -2,11 +2,6 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import LoadingScreen from "./Components/LoadingScreen";
 import MainMenu from "./Components/MainMenu";
-import About from "./Components/Sections/About";
-import Skills from "./Components/Sections/Skills";
-import Projects from "./Components/Sections/Projects";
-import Services from "./Components/Sections/Services";
-import Contact from "./Components/Sections/Contact";
 import { lazy, Suspense } from "react";
 
 type GameState = "loading" | "menu" | "about" | "skills" | "projects" | "services" | "contact";

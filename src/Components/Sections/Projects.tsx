@@ -29,8 +29,9 @@ interface Project {
 }
 
 const projects: Project[] = [
+
   {
-    id: "immersa",
+    id: "immersa", 
     image: immersa,
     title: "Immersa 2026",
     category: "Conference Website",
@@ -38,12 +39,13 @@ const projects: Project[] = [
     why: "I had a vision — a world where gaming, AI, VR, and design collide in one space. A fictional conference where creators, developers, and dreamers could compete, learn, and build together. Immersa was me asking: what would that world look like?",
     description: "A fictional gaming and design conference website with a bioluminescent dark aesthetic, glassmorphism UI, custom CSS grid system, countdown timer, marquee animations, and smooth page transitions.",
     stack: ["React", "Vite", "Custom CSS", "React Router", "Framer Motion", "Lenis"],
-    live: "#",
+    live: "https://immersa-26.vercel.app/",
     github: "https://github.com/NemoCode-3011/IMMERSA26",
     x: 62,
     y: 18,
     region: "Norte",
   },
+
   {
     id: "nextgen",
     image: next,
@@ -98,7 +100,7 @@ const projects: Project[] = [
     why: "I wanted to build something real. An actual application with data, roles, authentication, and logic. My first attempt at thinking like a fullstack developer.",
     description: "A real estate admin dashboard with role-based authentication, property listings, and API integration.",
     stack: ["React", "TypeScript", "CSS"],
-    live: "#",
+    live: "https://arcadia-homes-wvni.vercel.app/",
     github: "https://github.com/NemoCode-3011/arcadia-homes",
     x: 55,
     y: 72,
