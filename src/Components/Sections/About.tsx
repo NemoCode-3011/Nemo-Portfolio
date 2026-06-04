@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion} from "framer-motion";
 import nemo from "../../assets/img-2.jpeg";
 import life from "../../assets/DBH.jpeg"
 interface Props {
@@ -24,10 +24,8 @@ const devStats = [
 
 const About = ({ onBack }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [exiting, setExiting] = useState(false);
 
   const handleBack = () => {
-    setExiting(true);
     setTimeout(() => onBack(), 1200);
   };
 
@@ -217,11 +215,9 @@ const About = ({ onBack }: Props) => {
       initial={{ scale: 1.15, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 1.15, opacity: 0 }}
-      transition={{ duration: 1.2, ease: "easeInOut" }}
-      className="fixed inset-0 bg-[#020A0C] overflow-y-auto"
-    >
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      className="fixed inset-0 bg-[#020A0C] overflow-y-auto">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-
       <img
         src={life}
         alt=""

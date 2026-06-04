@@ -8,7 +8,6 @@ interface Props {
 const LoadingScreen = ({ onStart }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [showStart, setShowStart] = useState(false);
-  const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowStart(true), 2500);
@@ -107,7 +106,6 @@ const LoadingScreen = ({ onStart }: Props) => {
   }, []);
 
   const handleStart = () => {
-    setExiting(true);
     setTimeout(() => onStart(), 1000);
   };
 
@@ -116,7 +114,7 @@ const LoadingScreen = ({ onStart }: Props) => {
       key="loading"
       className="fixed inset-0 bg-[#020A0C] flex flex-col items-center justify-center overflow-hidden"
       exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5 }}
     >
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 

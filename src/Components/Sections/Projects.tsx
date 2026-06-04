@@ -6,6 +6,7 @@ import vlanner from "../../assets/vlanner-img.png"
 import next from "../../assets/next-gen.png"
 import sp360 from "../../assets/sp-360.png"
 import arcadia from "../../assets/Arcadia.png"
+import portfolio from "../../assets/nemo-dev.png"
 
 interface Props {
   onBack: () => void;
@@ -106,6 +107,21 @@ const projects: Project[] = [
     y: 72,
     region: "Centro",
   },
+  {
+  id: "Portfolio",
+   image: portfolio,
+  title: "Nemo.dev",
+  category: "Portfolio · Web Experience",
+  status: "Deployed",
+  why: "I didn't want a portfolio. I wanted a world. Every developer has a portfolio — not every developer builds one that feels like booting up a AAA game. This was me refusing to be ordinary with it. It's the most personal thing I've ever built.",
+  description: "A game-inspired portfolio built as a single page application with scene-based navigation. Features a cinematic loading screen, post-apocalyptic game menu, and six unique sections each inspired by a different game universe — Detroit: Become Human, God of War, Far Cry 6, Red Dead Redemption 2, Jedi Fallen Order, and more.",
+  stack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lenis", "Vite", "EmailJS"],
+  live: "#",
+  github: "#",
+  x: 48,
+  y: 38,
+  region: "Centro",
+},
 ];
 
 const ProjectModal = ({
@@ -476,7 +492,6 @@ const Projects = ({ onBack }: Props) => {
           Viva Libertad
         </p>
       </div>
-
       {/* Map container */}
       <div className="relative w-full h-full">
         {/* Far Cry map */}

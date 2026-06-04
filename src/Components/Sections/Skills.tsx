@@ -462,7 +462,7 @@ const Skills = ({ onBack }: Props) => {
       initial={{ scale: 1.15, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 1.15, opacity: 0 }}
-      transition={{ duration: 1.2, ease: "easeInOut" }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
       className="fixed inset-0 bg-[#020A0C] overflow-y-auto overflow-x-hidden"
     >
       <canvas ref={canvasRef} className="fixed inset-0 w-full h-full pointer-events-none" />
