@@ -340,7 +340,7 @@ const MarqueeRow = ({
           animationPlayState: paused ? "paused" : "running",
         }}
 
-        transition={{ duration: 10, repeat: Infinity, ease: "linear", repeatType: "loop"}}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear", repeatType: "loop"}}
         className="flex gap-4 w-max"
       >
         {doubled.map((item, i) => (
