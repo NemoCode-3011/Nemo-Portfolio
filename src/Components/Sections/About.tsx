@@ -26,7 +26,7 @@ const About = ({ onBack }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const handleBack = () => {
-    setTimeout(() => onBack(), 1200);
+    onBack();
   };
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const About = ({ onBack }: Props) => {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [onBack]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -217,16 +217,16 @@ const About = ({ onBack }: Props) => {
       exit={{ scale: 1.15, opacity: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
       className="fixed inset-0 bg-[#020A0C] overflow-y-auto">
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
       <img
         src={life}
         alt=""
-        className="absolute inset-0 w-full h-full object-contain opacity-30"
+        className="absolute inset-0 w-full h-full object-contain opacity-30 pointer-events-none"
       />
 
       {/* Vignette */}
-      <div className="absolute inset-0 bg-linear-to-t from-[#020A0C] via-transparent to-[#020A0C]/50" />
-      <div className="absolute inset-0 bg-linear-to-r from-[#020A0C]/60 via-transparent to-[#020A0C]/80" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#020A0C] via-transparent to-[#020A0C]/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#020A0C]/60 via-transparent to-[#020A0C]/80 pointer-events-none" />
 
       {/* Corner decorations */}
       <div className="absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-[#17797C]/50" />
@@ -234,13 +234,13 @@ const About = ({ onBack }: Props) => {
       <div className="absolute bottom-6 left-6 w-10 h-10 border-b-2 border-l-2 border-[#17797C]/50" />
       <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-[#17797C]/50" />
 
-      {/* ESC prompt */}
+      {/* ESC*/}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        onClick={handleBack}
-        className="absolute top-8 left-12 md:left-20 flex items-center gap-3 group "
+        onClick={onBack}
+        className="absolute top-8 left-12 md:left-20 flex items-center gap-3 group z-50"
       >
         <span
           className="text-[#17797C] border border-[#17797C]/50 px-2 py-0.5 text-xs tracking-widest group-hover:border-[#7FD398] group-hover:text-[#7FD398] transition-all duration-300 "
