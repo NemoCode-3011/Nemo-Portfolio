@@ -331,17 +331,16 @@ const MarqueeRow = ({
       onMouseLeave={() => setPaused(false)}
     >
       <motion.div
-        animate={
-          paused
-            ? {}
-            : {
-              x:
-                direction === "left"
-                  ? ["0%", "-33.33%"]
-                  : ["-33.33%", "0%"],
-            }
-        }
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        animate={{
+          x: direction === "left"
+            ? ["0%", "-33.33%"]
+            : ["-33.33%", "0%"],
+        }}
+        style={{
+          animationPlayState: paused ? "paused" : "running",
+        }}
+
+        transition={{ duration: 10, repeat: Infinity, ease: "linear", repeatType: "loop"}}
         className="flex gap-4 w-max"
       >
         {doubled.map((item, i) => (
