@@ -150,7 +150,7 @@ const LoadingScreen = ({ onStart }: Props) => {
           className="text-[#4D8A8A] text-xs text-center md:text-sm tracking-[0.5em] uppercase"
           style={{ fontFamily: "'Cinzel', serif" }}
         >
-          Frontend Developer — Builder — Dreamer
+          Frontend Developer — Builder — Creative Technologist
         </motion.p>
 
         {/* Press Start */}
